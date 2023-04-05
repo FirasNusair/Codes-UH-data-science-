@@ -48,6 +48,19 @@ print(correlation)
 
 
 def country_stats(df1, df2, country):
+    """
+    Calculate the mean, median, and skewness of arable and forest land for a given country.
+    
+    Parameters:
+        df1 (DataFrame): DataFrame with arable land data for countries
+        df2 (DataFrame): DataFrame with forest land data for countries
+        country (str): Name of the country to calculate statistics for
+        
+    Returns:
+        DataFrame: A DataFrame with columns for mean, median, and skewness for both arable and forest land
+        
+        If the selected country is not in both dataframes, returns None and prints an error message.
+    """
     # Check if the selected country is in both dataframes
     if country not in df1.index or country not in df2.index:
         print(f"{country} not found in both dataframes")
